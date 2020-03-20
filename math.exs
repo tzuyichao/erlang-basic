@@ -16,6 +16,10 @@ defmodule Math do
   def sum_pattern(x), do: sum_private(x, 0)
   def sum_private([], total), do: total
   def sum_private([head | tail], total), do: sum_private(tail, head + total)
+
+  # guard
+  def abs(i) when i<0, do: -i
+  def abs(i), do: i
 end
 
 y = Math.add_one(10)
@@ -32,5 +36,10 @@ IO.inspect(b)
 
 c = Math.sum_pattern([1, 2, 3])
 IO.inspect(c)
+
+Math.abs(-19)
+|> IO.inspect
+|> Math.add_one
+|> IO.inspect
 
 System.halt()
