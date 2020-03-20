@@ -9,4 +9,8 @@ today = Date.utc_today()
 
 IO.inspect(today, label: "Today is")
 
+{date, time} = :calendar.local_time()
+IO.inspect(date)
+IO.inspect(time)
+
 System.halt()
