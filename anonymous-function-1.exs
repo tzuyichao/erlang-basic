@@ -18,4 +18,10 @@ is_odd.(5)
 |> foo.()
 |> IO.inspect(label: "final")
 
+Enum.max_by(["a", "aa", "aaa"], fn x -> String.length(x) end)
+|> IO.inspect(label: "Max Length String is")
+
+Enum.max_by(["a", "aa", "aaa", "b", "bb"], &String.length/1)
+|> IO.inspect(label: "Max length String is")
+
 System.halt()
